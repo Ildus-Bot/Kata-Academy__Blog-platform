@@ -2,13 +2,11 @@ import React, { useState, useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import { format } from 'date-fns';
 
-import checkImageURL from '../../utils/checkImageURL';
-
 import authorIcon from '../../assets/icons/user.png';
 import './Person.scss';
 
 const Person = ({ isAuthor = false, author = null, dataOfUpdate }) => {
-  if (author) {
+  if (author || isAuthor) {
     return <Author author={author} dataOfUpdate={dataOfUpdate} />;
   }
 

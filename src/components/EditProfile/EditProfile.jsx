@@ -158,8 +158,8 @@ const EditProfile = () => {
         !user.errors.username &&
         !isHiddenSuccessfulMessage &&
         user.status === 'resolved' && (
-          <p className="edit-profile__successful-message-on-button">The data change was successful</p>
-        )}
+        <p className="edit-profile__successful-message-on-button">The data change was successful</p>
+      )}
     </form>
   );
 };

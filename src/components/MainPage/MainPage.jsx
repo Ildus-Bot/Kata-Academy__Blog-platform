@@ -1,9 +1,9 @@
 import React from 'react';
-import { Pagination, ConfigProvider, Alert, Spin } from 'antd';
+import { Pagination, ConfigProvider, Alert } from 'antd';
 import { useSelector, useDispatch } from 'react-redux';
-import { getArticles, errorClear } from '../../features/articlesSlice';
 import { useRouteMatch, useHistory } from 'react-router-dom';
 
+import { getArticles, errorClear } from '../../features/articlesSlice';
 import ListOfDescriptionArticle from '../ListOfDescriptionArticle';
 
 import './MainPage.scss';

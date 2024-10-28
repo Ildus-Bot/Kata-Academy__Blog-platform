@@ -2,9 +2,9 @@ import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { useRouteMatch, useHistory } from 'react-router-dom';
 import Markdown from 'react-markdown';
-import { getArticle, errorClear } from '../../features/articlesSlice';
 import { Spin, Alert } from 'antd';
 
+import { getArticle, errorClear } from '../../features/articlesSlice';
 import DescriptionArticle from '../DescriptionArticle';
 
 import './Article.scss';

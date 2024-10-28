@@ -7,7 +7,6 @@ import SignUp from '../SignUp';
 import SignIn from '../SignIn';
 import EditProfile from '../EditProfile';
 import FormOfArticle from '../FormOfArticle';
-import ListOfDescriptionArticle from '../ListOfDescriptionArticle';
 import MainPage from '../MainPage';
 
 import './App.scss';

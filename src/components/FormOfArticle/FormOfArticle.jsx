@@ -1,10 +1,10 @@
-import React, { useEffect, useMemo } from 'react';
+import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { useForm, useFieldArray } from 'react-hook-form';
 import { Redirect, useHistory, useRouteMatch } from 'react-router-dom';
-import { changeStateReRender, errorClear } from '../../features/articlesSlice';
 import { Spin, Alert } from 'antd';
 
+import { errorClear } from '../../features/articlesSlice';
 import { creacteArticle, updateArticle, getArticle } from '../../features/articlesSlice';
 
 import './FormOfArticle.scss';
@@ -28,7 +28,6 @@ const FormOfArticle = () => {
     register,
     control,
     handleSubmit,
-    formState: { errors },
   } = useForm({
     defaultValues: {
       tagList: defaultValues,
