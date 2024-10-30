@@ -12,16 +12,24 @@ import MainPage from '../MainPage';
 import './App.scss';
 
 const App = () => {
+  const pathMainPage = ['/', '/page/:pathParam?', '/articles'];
+  const pathArticle = '/article/:id';
+  const pathSignUp = '/sign-up';
+  const pathSignIn = '/sign-in';
+  const pathEditProfile = '/profile';
+  const pathFormOfNewArticle = '/new-article';
+  const pathFormOfEditArticle = '/articles/:id/edit';
+
   return (
     <Router>
       <Header />
-      <Route path={['/', '/page/:pathParam?', '/articles']} component={MainPage} exact />
-      <Route path="/article/:id" component={Article} />
-      <Route path="/sign-up" component={SignUp} />
-      <Route path="/sign-in" component={SignIn} />
-      <Route path="/profile" component={EditProfile} />
-      <Route path="/new-article" component={FormOfArticle} />
-      <Route path="/articles/:id/edit" component={FormOfArticle} />
+      <Route path={pathMainPage} component={MainPage} exact />
+      <Route path={pathArticle} component={Article} />
+      <Route path={pathSignUp} component={SignUp} />
+      <Route path={pathSignIn} component={SignIn} />
+      <Route path={pathEditProfile} component={EditProfile} />
+      <Route path={pathFormOfNewArticle} component={FormOfArticle} />
+      <Route path={pathFormOfEditArticle} component={FormOfArticle} />
     </Router>
   );
 };

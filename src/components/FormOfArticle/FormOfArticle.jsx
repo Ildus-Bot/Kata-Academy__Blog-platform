@@ -24,11 +24,7 @@ const FormOfArticle = () => {
 
   const defaultValues = id ? article.tagList : [{ text: '' }];
 
-  const {
-    register,
-    control,
-    handleSubmit,
-  } = useForm({
+  const { register, control, handleSubmit } = useForm({
     defaultValues: {
       tagList: defaultValues,
     },

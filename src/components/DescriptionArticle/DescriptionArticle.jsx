@@ -32,7 +32,7 @@ const DescriptionArticle = ({
   const [isVisibleNotification, setIsVisibleNotification] = useState(false);
 
   const tagsList = Array.isArray(arrayOfTags) ? arrayOfTags : [];
-  const hasTitle = title.trim().length > 0 ? true : false;
+  const hasTitle = title.trim().length > 0;
 
   const handleClick = (event) => {
     event.preventDefault();

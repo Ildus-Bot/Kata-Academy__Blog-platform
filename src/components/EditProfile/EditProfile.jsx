@@ -18,22 +18,13 @@ const EditProfile = () => {
   const user = useSelector((state) => state.user);
   const dispatch = useDispatch();
 
-  // const [oldDataUser, setOldDataUser] = useState(user.user);
   const [isHiddenSuccessfulMessage, setIsHiddenSuccessfulMessage] = useState(true);
-
-  // useEffect(() => {
-  //   setOldDataUser(user.user);
-  // }, [user.user]);
-  // console.log(user.user);
 
   if (!user.user.token) {
     return <Redirect to="/" />;
   }
 
   const onSubmit = (data) => {
-    // if (!compareUserData(data, { withoutToken: true }) && !data.password) {
-    //   return;
-    // }
     setIsHiddenSuccessfulMessage(false);
     if (!data.password) {
       dispatch(
@@ -54,25 +45,6 @@ const EditProfile = () => {
       );
     }
   };
-
-  //   function compareUserData(newUserData, options = {}) {
-  //     // console.log(oldUserData, newUserData)
-  //     if (user.user.username !== newUserData.username) {
-  //       return true;
-  //     }
-  //     if (user.user.email !== newUserData.email) {
-  //       return true;
-  //     }
-  //     if (user.user.image !== newUserData.image) {
-  //       return true;
-  //     }
-  //
-  //     return false;
-  //   }
-
-  // console.log(compareUserData(oldDataUser, user.user), !user.errors.editProfileError, !user.errors.email, !user.errors.username, !isHiddenSuccessfulMessage, user.status === 'resolved');
-
-  // console.log(oldPassword, user.user.password, oldPassword !== user.user.password);
 
   return (
     <form className="small-container edit-profile" onSubmit={handleSubmit(onSubmit)}>
@@ -150,16 +122,13 @@ const EditProfile = () => {
       />
       <button className="button edit-profile__button">Save</button>
       {user.errors.editProfileError && <p className="edit-profile__error-message">{user.errors.editProfileError}</p>}
-      {/* {(compareUserData(oldDataUser, user.user) && !user.errors.editProfileError && !user.errors.email && !user.errors.username && !isHiddenSuccessfulMessage && user.status === 'resolved') && ( */}
-      {/*   <p className="edit-profile__successful-message-on-button">The data change was successful</p> */}
-      {/* )} */}
       {!user.errors.editProfileError &&
         !user.errors.email &&
         !user.errors.username &&
         !isHiddenSuccessfulMessage &&
         user.status === 'resolved' && (
-        <p className="edit-profile__successful-message-on-button">The data change was successful</p>
-      )}
+          <p className="edit-profile__successful-message-on-button">The data change was successful</p>
+        )}
     </form>
   );
 };
